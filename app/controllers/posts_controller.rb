@@ -4,7 +4,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts =
+      if params[:category_id]
+        Post.where(category_id: params[:category_id])
+      else
+        Post.all
+      end
   end
 
   # GET /posts/1
@@ -16,10 +21,12 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @categories = Category.all
   end
 
   # GET /posts/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /posts
@@ -70,6 +77,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :category_id)
     end
 end

@@ -23,10 +23,17 @@
 <% @comments.each do |comment| %>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><%= comment.author %></h5>
+      <h5 class="card-title"><%= comment.user.try(:email) %></h5>
       <p class="card-text"><%= comment.body %></p>
     </div>
   </div>
 <% end %>
 
-<%= render "comments/form", comment: @comment %>
+
+<br>
+
+<% if user_signed_in? %>
+	<%= render "comments/form", comment: @comment %>
+<% else %>
+	<%= link_to 'Musisz się zalogować by pisać komentarze', user_session_path %>
+<% end %>

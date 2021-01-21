@@ -1,24 +1,6 @@
-# README
+Zbuduj swoją pierwszą aplikacje w Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Przykład z filmu ja stworzyć prosty blog. Blog będzie miał posty, a posty komentarze. Na koniec dodamy jeszcze użytkowników.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Link do filmu - https://www.youtube.com/watch?v=CXNCHUA3-4k
+Link do aplikacji - https://ruby-blog-po-polsku.herokuapp.com
